@@ -5,60 +5,61 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
 
 const projects = [
   {
-    title: "Content DO",
+    title: "CONTENT DO",
     image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80", // Replace with your own
+      "https://res.cloudinary.com/dqs3mkxnr/image/upload/v1754484192/Screenshot_2025-08-06_at_16.23.32_1_wgv5ss.png",
     description:
       "Video production website for brands, music videos, and action scenes. (Sample Project)",
   },
   {
-    title: "My Portfolio",
+    title: "Visites Parfums Paris",
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80", // Replace with your own
+      "https://res.cloudinary.com/dqs3mkxnr/image/upload/v1754484192/screencapture-vpparis-fr-2025-08-06-16_35_18_1_blaqm4.png",
     description:
-      "Modern portfolio showcasing my latest web dev projects and design skills.",
+      "A website for a guided tour company in Paris, showcasing perfume history and culture.",
   },
   {
-    title: "Contact Card App",
+    title: "Wedding Website",
     image:
-      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80", // Replace with your own
+      "https://res.cloudinary.com/dqs3mkxnr/image/upload/v1754484473/screencapture-celinepierre2025-Services-2025-08-06-16_46_55_1_mn88ej.png",
     description:
-      "A simple React app for sharing digital business cards easily and securely.",
+      "A wedding website with a interaactive photo gallery, RSVP form, and event details.",
   },
 ];
 
 export default function ProjectsCarousel() {
   return (
     <div className="w-full max-w-md mx-auto mb-8">
-      <h3 className="text-lg font-bold mb-4 text-center">My recent projects</h3>
+      <h3 className="text-2xl font-bold mb-4 text-center">
+        My recent projects
+      </h3>
       <Carousel>
         <CarouselContent>
           {projects.map((project, idx) => (
             <CarouselItem key={idx}>
-              <Card>
-                {/* Project image */}
+              <div className="relative">
+                {/* No Card if you want zero borders/background */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-40 object-cover rounded-t"
+                  className="w-full h-full object-cover" // h-60 (15rem) sets fixed height, adjust as needed
+                  draggable={false}
                 />
-                <CardContent className="p-4"></CardContent>
-              </Card>
+                {/* Arrows inside image */}
+                <CarouselPrevious className="absolute top-1/2 left-2 -translate-y-1/2 z-10 bg-black/60 text-white rounded-full w-8 h-8 p-0" />
+                <CarouselNext className="absolute top-1/2 right-2 -translate-y-1/2 z-10 bg-black/60 text-white rounded-full w-8 h-8 p-0" />
+              </div>
+              {/* Title and description below image */}
               <div className="font-semibold">{project.title}</div>
-              <p className="text-sm text-muted-foreground mt-1">
+              <p className="text-sm/4 text-muted-foreground">
                 {project.description}
               </p>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="flex justify-between mt-2">
-          <CarouselPrevious />
-          <CarouselNext />
-        </div>
       </Carousel>
     </div>
   );

@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import { FaLanguage } from "react-icons/fa6";
+import { GrLanguage } from "react-icons/gr";
 
 export default function Nav() {
   // State for selected language
@@ -20,13 +21,17 @@ export default function Nav() {
   };
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 border-b  w-full max-w-md mx-auto bg-white shadow-lg border-none mb-8">
+    <nav className="flex items-center justify-between py-4 w-full border-none">
       {/* Left: Language Switcher */}
       <div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline">
-              <FaLanguage /> {language}
+            <Button
+              variant="ghost"
+              className="p-0 bg-transparent hover:bg-transparent shadow-none border-none outline-none focus:ring-0 active:bg-transparent"
+              aria-label="Change language"
+            >
+              <GrLanguage size={24} className=" text-[#302C36]" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -48,7 +53,9 @@ export default function Nav() {
 
       {/* Right: Message Me Button */}
       <div>
-        <Button>Message Me</Button>
+        <Button variant="gradient" className="rounded-full">
+          message me
+        </Button>
       </div>
     </nav>
   );

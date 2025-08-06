@@ -3,13 +3,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function ProfileCard() {
   return (
-    <Card className="w-full max-w-md mx-auto bg-white shadow-lg border-none mb-8">
+    <Card className="w-full max-w-md mx-auto bg-gray-300 shadow-lg border-none mb-8">
       <CardContent className="flex flex-col items-center pt-6 pb-8">
         {/* Profile photo (placeholder for now) */}
         <Avatar className="w-64 h-64 mb-4 rounded-xs">
           {/* Replace src with your CDN link later */}
           <AvatarImage src="" alt="Maximilien Brunet" />
-          <AvatarFallback className="bg-gradient-to-tr from-indigo-400 to-purple-400 text-3xl rounded-xs">
+          <AvatarFallback className="bg-[linear-gradient(90deg,#302C36,#666F98)] text-3xl rounded-xs">
             MB
           </AvatarFallback>
         </Avatar>
