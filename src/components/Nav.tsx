@@ -9,7 +9,7 @@ import {
 
 import { FaLanguage } from "react-icons/fa6";
 
-export function Nav() {
+export default function Nav() {
   // State for selected language
   const [language, setLanguage] = React.useState<"EN" | "FR" | "RU">("EN");
 
@@ -53,5 +53,3 @@ export function Nav() {
     </nav>
   );
 }
-
-export default Nav;

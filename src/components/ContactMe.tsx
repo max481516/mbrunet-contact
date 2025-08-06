@@ -1,4 +1,8 @@
-export function ContactMe({ onFormClick }: { onFormClick: () => void }) {
+export default function ContactMe({
+  onFormClick,
+}: {
+  onFormClick: () => void;
+}) {
   return (
     <div className="w-full max-w-md mx-auto mb-10">
       <p className="font-bold text-l leading-snug text-center">
@@ -22,5 +26,3 @@ export function ContactMe({ onFormClick }: { onFormClick: () => void }) {
     </div>
   );
 }
-
-export default ContactMe;

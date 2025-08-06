@@ -1,4 +1,4 @@
-export function PortfolioLink() {
+export default function PortfolioLink() {
   return (
     <div className="w-full max-w-md mx-auto mb-8">
       <p className="font-semibold text-l leading-snug text-center">
@@ -17,5 +17,3 @@ export function PortfolioLink() {
     </div>
   );
 }
-
-export default PortfolioLink;

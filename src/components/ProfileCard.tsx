@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-export function ProfileCard() {
+export default function ProfileCard() {
   return (
     <Card className="w-full max-w-md mx-auto bg-white shadow-lg border-none mb-8">
       <CardContent className="flex flex-col items-center pt-6 pb-8">
@@ -26,5 +26,3 @@ export function ProfileCard() {
     </Card>
   );
 }
-
-export default ProfileCard;

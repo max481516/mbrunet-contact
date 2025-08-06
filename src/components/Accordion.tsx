@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export function OfferAccordion() {
+export default function OfferAccordion() {
   return (
     <div className="w-full max-w-md mx-auto my-8">
       <h2 className="text-2xl font-bold mb-4 text-center">What do I offer?</h2>
@@ -46,5 +46,3 @@ export function OfferAccordion() {
     </div>
   );
 }
-
-export default OfferAccordion;

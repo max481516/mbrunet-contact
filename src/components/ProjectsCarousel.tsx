@@ -31,7 +31,7 @@ const projects = [
   },
 ];
 
-export function ProjectsCarousel() {
+export default function ProjectsCarousel() {
   return (
     <div className="w-full max-w-md mx-auto mb-8">
       <h3 className="text-lg font-bold mb-4 text-center">My recent projects</h3>
@@ -63,5 +63,3 @@ export function ProjectsCarousel() {
     </div>
   );
 }
-
-export default ProjectsCarousel;

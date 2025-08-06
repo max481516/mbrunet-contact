@@ -11,4 +11,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    allowedHosts: ["daily-rare-halibut.ngrok-free.app", "localhost"],
+  },
 });
