@@ -41,11 +41,10 @@ export default function ProjectsCarousel() {
           {projects.map((project, idx) => (
             <CarouselItem key={idx}>
               <div className="relative">
-                {/* No Card if you want zero borders/background */}
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover" // h-60 (15rem) sets fixed height, adjust as needed
+                  className="w-full h-full object-cover rounded-sm" // h-60 (15rem) sets fixed height, adjust as needed
                   draggable={false}
                 />
                 {/* Arrows inside image */}

@@ -5,10 +5,14 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 
-import { FaLanguage } from "react-icons/fa6";
-import { GrLanguage } from "react-icons/gr";
+const flagMap: Record<"EN" | "FR" | "RU", string> = {
+  EN: "🇬🇧",
+  FR: "🇫🇷",
+  RU: "🇷🇺",
+};
 
 export default function Nav() {
   // State for selected language
@@ -21,27 +25,46 @@ export default function Nav() {
   };
 
   return (
-    <nav className="flex items-center justify-between py-4 w-full border-none">
+    <nav className="flex items-center justify-between py-2 w-full border-none">
       {/* Left: Language Switcher */}
       <div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
-              variant="ghost"
-              className="p-0 bg-transparent hover:bg-transparent shadow-none border-none outline-none focus:ring-0 active:bg-transparent"
+              variant="gradient"
+              className="rounded-full px-3 py-1 gap-2 flex items-center"
               aria-label="Change language"
             >
-              <GrLanguage size={24} className=" text-[#302C36]" />
+              <span className="text-lg">{flagMap[language]}</span>
+              <span className="font-semibold text-white">{language}</span>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuItem onClick={() => handleLanguageChange("EN")}>
+          <DropdownMenuContent
+            sideOffset={12}
+            align="start"
+            className="relative w-20 min-w-0 p-0 text-[#302C36] bg-indigo-50 overflow-visible rounded-md shadow-lg before:content-[''] before:absolute before:-top-2 before:left-7 before:w-4 before:h-4 before:rotate-45 before:bg-indigo-50 "
+          >
+            <DropdownMenuItem
+              className="justify-center gap-1 cursor-pointer px-2 py-1 hover:bg-gradient-to-br hover:from-[#302C36] hover:to-[#666F98] hover:text-white rounded-sm"
+              onClick={() => handleLanguageChange("EN")}
+            >
+              <span role="img" aria-label="English" className="text-lg">🇬🇧</span>
               EN
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => handleLanguageChange("FR")}>
+            <DropdownMenuSeparator className="my-0.5 mx-1 h-px bg-[#302C36]/20" />
+            <DropdownMenuItem
+              className="justify-center gap-1 cursor-pointer px-2 py-1 hover:bg-gradient-to-br hover:from-[#302C36] hover:to-[#666F98] hover:text-white rounded-sm"
+              onClick={() => handleLanguageChange("FR")}
+            >
+              <span role="img" aria-label="Français" className="text-lg">🇫🇷</span>
               FR
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => handleLanguageChange("RU")}>
+            <DropdownMenuSeparator className="my-0.5 mx-1 h-px bg-[#302C36]/20" />
+            <DropdownMenuItem
+              className="justify-center gap-1 cursor-pointer px-2 py-1 hover:bg-gradient-to-br hover:from-[#302C36] hover:to-[#666F98] hover:text-white rounded-sm"
+              onClick={() => handleLanguageChange("RU")}
+            >
+              <span role="img" aria-label="Русский" className="text-lg">🇷🇺</span>
               RU
             </DropdownMenuItem>
           </DropdownMenuContent>
