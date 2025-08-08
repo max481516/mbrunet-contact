@@ -45,27 +45,27 @@ export default function Nav() {
             className="relative w-20 min-w-0 p-0 text-[#302C36] bg-indigo-50 overflow-visible rounded-md shadow-lg before:content-[''] before:absolute before:-top-2 before:left-7 before:w-4 before:h-4 before:rotate-45 before:bg-indigo-50 "
           >
             <DropdownMenuItem
-              className="justify-center gap-1 cursor-pointer px-2 py-1 hover:bg-gradient-to-br hover:from-[#302C36] hover:to-[#666F98] hover:text-white rounded-sm"
+              className="group justify-center gap-1 cursor-pointer px-2 py-1 hover:bg-gradient-to-br hover:from-[#302C36] hover:to-[#666F98]"
               onClick={() => handleLanguageChange("EN")}
             >
               <span role="img" aria-label="English" className="text-lg">🇬🇧</span>
-              EN
+              <span className="font-medium group-hover:text-white">EN</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator className="my-0.5 mx-1 h-px bg-[#302C36]/20" />
             <DropdownMenuItem
-              className="justify-center gap-1 cursor-pointer px-2 py-1 hover:bg-gradient-to-br hover:from-[#302C36] hover:to-[#666F98] hover:text-white rounded-sm"
+              className="group justify-center gap-1 cursor-pointer px-2 py-1 hover:bg-gradient-to-br hover:from-[#302C36] hover:to-[#666F98]"
               onClick={() => handleLanguageChange("FR")}
             >
               <span role="img" aria-label="Français" className="text-lg">🇫🇷</span>
-              FR
+              <span className="font-medium group-hover:text-white">FR</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator className="my-0.5 mx-1 h-px bg-[#302C36]/20" />
             <DropdownMenuItem
-              className="justify-center gap-1 cursor-pointer px-2 py-1 hover:bg-gradient-to-br hover:from-[#302C36] hover:to-[#666F98] hover:text-white rounded-sm"
+              className="group justify-center gap-1 cursor-pointer px-2 py-1 hover:bg-gradient-to-br hover:from-[#302C36] hover:to-[#666F98]"
               onClick={() => handleLanguageChange("RU")}
             >
               <span role="img" aria-label="Русский" className="text-lg">🇷🇺</span>
-              RU
+              <span className="font-medium group-hover:text-white">RU</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

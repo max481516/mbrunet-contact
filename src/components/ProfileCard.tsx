@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function ProfileCard() {
   return (
-    <Card className="w-full max-w-md mx-auto bg-gray-300 shadow-lg border-none mb-8">
+    <Card className="w-full max-w-md mx-auto bg-gray-300 shadow-lg border-none mb-8 mt-3">
       <CardContent className="flex flex-col items-center pt-6 pb-8">
         {/* Profile photo (placeholder for now) */}
         <Avatar className="w-64 h-64 mb-4 rounded-xs">
