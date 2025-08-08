@@ -23,6 +23,8 @@ export default function ContactDialog({
   const [error, setError] = React.useState<string | null>(null);
 
   const formRef = React.useRef<HTMLFormElement | null>(null);
+  // Focus target to avoid auto-focusing an input on mobile (which opens the keyboard)
+  const topFocusRef = React.useRef<HTMLDivElement | null>(null);
 
   function encode(data: Record<string, FormDataEntryValue>) {
     return new URLSearchParams(
@@ -72,7 +74,17 @@ export default function ContactDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent
+        className="sm:max-w-md"
+        // Prevent Radix from auto-focusing the first focusable element (often an input)
+        onOpenAutoFocus={(e) => {
+          e.preventDefault();
+          // Move focus to a non-input element to avoid opening the mobile keyboard
+          topFocusRef.current?.focus({ preventScroll: true });
+        }}
+      >
+        {/* Programmatic focus target (not in tab order) */}
+        <div ref={topFocusRef} tabIndex={-1} />
         <DialogHeader>
           <DialogTitle>Message me</DialogTitle>
           <DialogDescription>
@@ -98,7 +110,7 @@ export default function ContactDialog({
           onSubmit={handleSubmit}
           className="space-y-4"
         >
-          {/* Required by Netlify */}
+          
           <input type="hidden" name="form-name" value="contact" />
           <input type="text" name="bot-field" className="hidden" tabIndex={-1} autoComplete="off" />
 
