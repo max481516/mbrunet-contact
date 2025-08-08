@@ -14,7 +14,11 @@ const flagMap: Record<"EN" | "FR" | "RU", string> = {
   RU: "🇷🇺",
 };
 
-export default function Nav() {
+type NavProps = {
+  onMessageClick?: () => void;
+};
+
+export default function Nav({ onMessageClick }: NavProps) {
   // State for selected language
   const [language, setLanguage] = React.useState<"EN" | "FR" | "RU">("EN");
 
@@ -76,7 +80,11 @@ export default function Nav() {
 
       {/* Right: Message Me Button */}
       <div>
-        <Button variant="gradient" className="rounded-full">
+        <Button
+          variant="gradient"
+          className="rounded-full"
+          onClick={onMessageClick}
+        >
           message me
         </Button>
       </div>
