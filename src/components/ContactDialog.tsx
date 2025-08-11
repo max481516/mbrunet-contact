@@ -75,7 +75,7 @@ export default function ContactDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="sm:max-w-md"
+        className="sm:max-w-sm"
         // Prevent Radix from auto-focusing the first focusable element (often an input)
         onOpenAutoFocus={(e) => {
           e.preventDefault();
@@ -86,7 +86,7 @@ export default function ContactDialog({
         {/* Programmatic focus target (not in tab order) */}
         <div ref={topFocusRef} tabIndex={-1} />
         <DialogHeader>
-          <DialogTitle>Message me</DialogTitle>
+          <DialogTitle className="text-2xl">Message me</DialogTitle>
           <DialogDescription>
             Fill the form below and I’ll get back to you.
           </DialogDescription>

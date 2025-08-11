@@ -47,7 +47,6 @@ export default function ActionButtons() {
         await navigator.clipboard.writeText(shareUrl);
         window.alert(`Link copied to clipboard: ${shareUrl}`);
       } else {
-        // Very old fallback
         window.prompt("Copy this link:", shareUrl);
       }
     } catch (err) {
@@ -61,7 +60,7 @@ export default function ActionButtons() {
     }
   }
 
-  // 3) Download my CV → served from /public/cv.pdf
+  // 3) Download my CV
   function handleDownloadCV() {
     const url = "/MAXIMILIEN-BRUNET-CV.pdf";
     const a = document.createElement("a");
@@ -73,7 +72,7 @@ export default function ActionButtons() {
   }
 
   return (
-    <section className="w-full max-w-md mx-auto flex flex-col gap-4 mb-8 ">
+    <section className="w-full max-w-sm mx-auto flex flex-col gap-4 mb-8 ">
       <Button
         variant="gradient"
         className="w-full text-base font-semibold"

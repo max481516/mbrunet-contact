@@ -4,7 +4,7 @@ export default function ContactMe({
   onFormClick: () => void;
 }) {
   return (
-    <div className="w-full max-w-md mx-auto mb-10">
+    <div className="w-full max-w-sm mx-auto mb-10">
       <p className="font-bold text-l leading-snug">
         <span className="underline-offset-4 decoration-blue-400">
           Interested in hiring me? Please contact me in your preferred method or

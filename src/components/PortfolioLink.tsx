@@ -1,6 +1,6 @@
 export default function PortfolioLink() {
   return (
-    <div className="w-full max-w-md mx-auto mb-8">
+    <div className="w-full max-w-sm mx-auto mb-6">
       <p className="font-semibold text-l leading-snug ">
         If you want more information about me and my projects, please visit my
         main website clicking on this{" "}

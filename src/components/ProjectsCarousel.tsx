@@ -32,8 +32,8 @@ const projects = [
 
 export default function ProjectsCarousel() {
   return (
-    <div className="w-full max-w-md mx-auto mb-8">
-      <h3 className="text-2xl font-bold mb-4 text-center">
+    <div className="w-full max-w-sm mx-auto mb-4">
+      <h3 className="text-3xl font-bold mb-4 text-center">
         My recent projects
       </h3>
       <Carousel>

@@ -1,10 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
+
 export default function ProfileCard() {
   return (
-    <Card className="w-full max-w-md mx-auto bg-gray-300 shadow-lg border-none mb-8 mt-3">
-      <CardContent className="flex flex-col items-center pt-6 pb-8">
+    <Card className="w-full max-w-sm mx-auto bg-gray-300 shadow-lg border-none mb-8 mt-3 py-10" >
+      <CardContent className="flex flex-col items-center">
         {/* Profile photo (placeholder for now) */}
         <Avatar className="w-64 h-64 mb-4 rounded-xs">
           {/* Replace src with your CDN link later */}
@@ -13,7 +14,7 @@ export default function ProfileCard() {
             MB
           </AvatarFallback>
         </Avatar>
-        <h2 className="text-xl font-bold text-center">Maximilien Brunet</h2>
+        <h2 className="text-2xl font-bold text-center">Maximilien Brunet</h2>
         <span className="text-muted-foreground text-sm text-center mb-2">
           Dubai, UAE
         </span>
