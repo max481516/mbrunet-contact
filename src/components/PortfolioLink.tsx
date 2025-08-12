@@ -2,8 +2,8 @@ export default function PortfolioLink() {
   return (
     <div className="w-full max-w-sm mx-auto mb-6">
       <p className="font-semibold text-l leading-snug ">
-        If you want more information about me and my projects, please visit my
-        main website clicking on this{" "}
+        If you want more information about me or my projects, please visit my
+        main website by clicking on this{" "}
         <a
           href="https://mbrunet.net"
           target="_blank"

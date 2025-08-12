@@ -19,9 +19,7 @@ export default function ProfileCard() {
           Dubai, UAE
         </span>
         <p className="text-center text-base font-medium max-w-xs mt-2">
-          Hi, I am a detail-oriented web developer based in Dubai, fluent in
-          French, Russian, and English, and passionate about creating modern,
-          fast, and user-friendly websites that help businesses grow.
+        Dubai-based, trilingual (French, Russian, English) developer driven by one goal: helping businesses grow. I craft sleek, high-performance apps using cutting-edge tools and agile workflows to turn ideas into results.
         </p>
       </CardContent>
     </Card>

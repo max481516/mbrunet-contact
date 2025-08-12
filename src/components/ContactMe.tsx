@@ -5,10 +5,9 @@ export default function ContactMe({
 }) {
   return (
     <div className="w-full max-w-sm mx-auto mb-10">
-      <p className="font-bold text-l leading-snug">
-        <span className="underline-offset-4 decoration-blue-400">
-          Interested in hiring me? Please contact me in your preferred method or
-          send me directly a message using this{" "}
+      <p className="font-semibold text-l leading-snug">
+        <span>
+        Ready to bring your project to life? Get in touch via your preferred method or send me a direct message using this{" "}
           <span
             role="button"
             tabIndex={0}

@@ -12,22 +12,23 @@ const projects = [
     image:
       "https://res.cloudinary.com/dqs3mkxnr/image/upload/v1754484192/Screenshot_2025-08-06_at_16.23.32_1_wgv5ss.png",
     description:
-      "Video production website for brands, music videos, and action scenes. (Sample Project)",
+      "Website for a video production company founded by cinema stuntmen, showcasing high-energy music videos, commercials, and action-packed brand campaigns.",
   },
   {
     title: "Visites Parfums Paris",
     image:
       "https://res.cloudinary.com/dqs3mkxnr/image/upload/v1754484192/screencapture-vpparis-fr-2025-08-06-16_35_18_1_blaqm4.png",
     description:
-      "A website for a guided tour company in Paris, showcasing perfume history and culture.",
+      "Promotional site for guided perfume tours, offering a journey through Paris’ finest boutiques, perfumery history, and olfactory discovery.",
   },
   {
     title: "Wedding Website",
     image:
       "https://res.cloudinary.com/dqs3mkxnr/image/upload/v1754484473/screencapture-celinepierre2025-Services-2025-08-06-16_46_55_1_mn88ej.png",
     description:
-      "A wedding website with a interaactive photo gallery, RSVP form, and event details.",
+      "Custom wedding site featuring an interactive, real-time photo/video album where guests can share and engage with moments as they happen.",
   },
+  
 ];
 
 export default function ProjectsCarousel() {
