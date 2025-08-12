@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -7,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import { useTranslation } from "react-i18next";
 
 const flagMap: Record<"EN" | "FR" | "RU", string> = {
   EN: "🇬🇧",
@@ -19,13 +19,18 @@ type NavProps = {
 };
 
 export default function Nav({ onMessageClick }: NavProps) {
-  // State for selected language
-  const [language, setLanguage] = React.useState<"EN" | "FR" | "RU">("EN");
+  const { t, i18n } = useTranslation();
 
-  // Handler for changing language
+  // Derive current language code from i18n (e.g., 'en' -> 'EN')
+  const language = (i18n.language?.slice(0, 2).toUpperCase() as
+    | "EN"
+    | "FR"
+    | "RU") || "EN";
+
+  // Switch language and let i18n persist to localStorage
   const handleLanguageChange = (lang: "EN" | "FR" | "RU") => {
-    setLanguage(lang);
-    // TODO: Implement language switching logic here
+    const map = { EN: "en", FR: "fr", RU: "ru" } as const;
+    i18n.changeLanguage(map[lang]);
   };
 
   return (
@@ -85,7 +90,7 @@ export default function Nav({ onMessageClick }: NavProps) {
           className="rounded-full"
           onClick={onMessageClick}
         >
-          message me
+          {t("nav.messageMe")}
         </Button>
       </div>
     </nav>

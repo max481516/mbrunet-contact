@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 export default function ActionButtons() {
+  const { t } = useTranslation();
   // 1) Save my contact → generate and download a vCard (.vcf)
   function handleSaveContact() {
     const vcard = [
@@ -34,9 +37,8 @@ export default function ActionButtons() {
   async function handleShare() {
     const shareUrl = "https://mbrunet.contact";
     const shareData = {
-      title: "Maximilien Brunet — Freelance Web Developer",
-      text:
-        "Hi! This is my portfolio and contact page. Let’s connect and discuss your project.",
+      title: t("actionButtons.shareTitle"),
+      text: t("actionButtons.shareText"),
       url: shareUrl,
     };
 
@@ -45,17 +47,17 @@ export default function ActionButtons() {
         await navigator.share(shareData as ShareData);
       } else if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(shareUrl);
-        window.alert(`Link copied to clipboard: ${shareUrl}`);
+        toast.success(t("actionButtons.alertCopied", { url: shareUrl }));
       } else {
-        window.prompt("Copy this link:", shareUrl);
+        window.prompt(t("actionButtons.promptCopy"), shareUrl);
       }
     } catch (err) {
       console.error(err);
       try {
         await navigator.clipboard.writeText(shareUrl);
-        window.alert(`Link copied to clipboard: ${shareUrl}`);
+        toast.success(t("actionButtons.alertCopied", { url: shareUrl }));
       } catch (_) {
-        window.prompt("Copy this link:", shareUrl);
+        window.prompt(t("actionButtons.promptCopy"), shareUrl);
       }
     }
   }
@@ -77,25 +79,25 @@ export default function ActionButtons() {
         variant="gradient"
         className="w-full text-base font-semibold"
         onClick={handleSaveContact}
-        aria-label="Save my contact as vCard"
+        aria-label={t("actionButtons.ariaSave")}
       >
-        save my contact
+        {t("actionButtons.saveContact")}
       </Button>
       <Button
         variant="gradient"
         className="w-full text-base font-semibold"
         onClick={handleShare}
-        aria-label="Share my contact"
+        aria-label={t("actionButtons.ariaShare")}
       >
-        share my contact
+        {t("actionButtons.shareContact")}
       </Button>
       <Button
         variant="gradient"
         className="w-full text-base font-semibold"
         onClick={handleDownloadCV}
-        aria-label="Download my CV"
+        aria-label={t("actionButtons.ariaDownload")}
       >
-        download my CV
+        {t("actionButtons.downloadCV")}
       </Button>
     </section>
   );

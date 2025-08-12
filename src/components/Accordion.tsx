@@ -5,55 +5,57 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { FiZap, FiUsers, FiCode, FiTrendingUp, FiGlobe } from "react-icons/fi";
+import { FiZap, FiUsers, FiTrendingUp, FiGlobe } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 export default function OfferAccordion() {
+  const { t } = useTranslation();
   return (
     <div className="w-full max-w-sm mx-auto my-5 p-6 pb-4 bg-gray-300 shadow-lg border-none rounded-xl">
-      <h2 className="text-3xl font-bold mb-4 text-center">What do I offer?</h2>
+      <h2 className="text-3xl font-bold mb-4 text-center">{t("accordion.title")}</h2>
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-lg font-medium ">
             <span className="inline-flex items-start gap-2 leading-snug">
               <FiZap className="size-5 text-[#5967a6] self-start mt-0.5" />
-              Modern &amp; Fast App Development
+              {t("accordion.item1Title")}
             </span>
           </AccordionTrigger>
           <AccordionContent >
-            I build responsive, maintainable apps with today’s best practices—built to scale and convert.
+            {t("accordion.item1Content")}
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
           <AccordionTrigger className="text-lg font-medium ">
             <span className="inline-flex items-start gap-2 leading-snug">
               <FiUsers className="size-5 text-[#5967a6] self-start mt-0.5" />
-              User-Focused, Detail-Oriented Craft
+              {t("accordion.item2Title")}
             </span>
           </AccordionTrigger>
           <AccordionContent>
-            Polished UX/UI with clear flows and micro-details that boost engagement and trust.
+            {t("accordion.item2Content")}
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger className="text-lg font-medium ">
             <span className="inline-flex items-start gap-2 leading-snug">
               <FiTrendingUp className="size-5 text-[#5967a6] self-start mt-0.5" />
-              Agile delivery focused on business value
+              {t("accordion.item3Title")}
             </span>
           </AccordionTrigger>
           <AccordionContent>
-            I use Scrum and agile practices to keep projects moving fast while ensuring every feature adds measurable value to your business.
+            {t("accordion.item3Content")}
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
     <AccordionTrigger className="text-lg font-medium">
       <span className="inline-flex items-start gap-2 leading-snug">
         <FiGlobe className="size-5 text-[#5967a6] self-start mt-0.5" />
-        Seamless multilingual collaboration
+        {t("accordion.item4Title")}
       </span>
     </AccordionTrigger>
     <AccordionContent>
-      Fluent in English, French, and Russian for smooth communication with global teams and clients.
+      {t("accordion.item4Content")}
     </AccordionContent>
   </AccordionItem>
       </Accordion>

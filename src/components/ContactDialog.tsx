@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 /**
  * Controlled contact dialog containing a Netlify form.
@@ -21,6 +22,7 @@ export default function ContactDialog({
     "idle" | "submitting" | "success" | "error"
   >("idle");
   const [error, setError] = React.useState<string | null>(null);
+  const { t } = useTranslation();
 
   const formRef = React.useRef<HTMLFormElement | null>(null);
   // Focus target to avoid auto-focusing an input on mobile (which opens the keyboard)
@@ -55,11 +57,11 @@ export default function ContactDialog({
         form.reset();
       } else {
         const text = await res.text();
-        setError(text || "Submission failed");
+        setError(text || t("contactDialog.errorFallback"));
         setStatus("error");
       }
     } catch (err: any) {
-      setError(err?.message || "Network error");
+      setError(err?.message || t("contactDialog.errorNetwork"));
       setStatus("error");
     }
   }
@@ -76,7 +78,7 @@ export default function ContactDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         className="sm:max-w-sm"
-        // Prevent Radix from auto-focusing the first focusable element (often an input)
+        // Prevent Radix from auto-focusing the first focusable element 
         onOpenAutoFocus={(e) => {
           e.preventDefault();
           // Move focus to a non-input element to avoid opening the mobile keyboard
@@ -86,15 +88,15 @@ export default function ContactDialog({
         {/* Programmatic focus target (not in tab order) */}
         <div ref={topFocusRef} tabIndex={-1} />
         <DialogHeader>
-          <DialogTitle className="text-2xl">Message me</DialogTitle>
+          <DialogTitle className="text-2xl">{t("contactDialog.title")}</DialogTitle>
           <DialogDescription>
-            Fill the form below and I’ll get back to you.
+            {t("contactDialog.description")}
           </DialogDescription>
         </DialogHeader>
 
         {status === "success" ? (
           <div className="rounded-md bg-green-50 text-green-900 border border-green-200 p-3 text-sm">
-            Thanks! Your message has been sent.
+            {t("contactDialog.success")}
           </div>
         ) : null}
         {status === "error" && error ? (
@@ -115,24 +117,24 @@ export default function ContactDialog({
           <input type="text" name="bot-field" className="hidden" tabIndex={-1} autoComplete="off" />
 
           <div className="grid gap-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" name="name" required placeholder="Your name" />
+            <Label htmlFor="name">{t("contactDialog.name")}</Label>
+            <Input id="name" name="name" required placeholder={t("contactDialog.namePlaceholder")} />
           </div>
 
           <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">{t("contactDialog.email")}</Label>
             <Input
               id="email"
               name="email"
               type="email"
               required
-              placeholder="you@example.com"
+              placeholder={t("contactDialog.emailPlaceholder")}
             />
           </div>
 
           <div className="grid gap-2">
-            <Label htmlFor="message">Message</Label>
-            <Textarea id="message" name="message" required rows={5} placeholder="How can I help you?" />
+            <Label htmlFor="message">{t("contactDialog.message")}</Label>
+            <Textarea id="message" name="message" required rows={5} placeholder={t("contactDialog.messagePlaceholder")} />
           </div>
 
           <DialogFooter className="gap-2">
@@ -141,7 +143,7 @@ export default function ContactDialog({
               variant="gradient"
               disabled={status === "submitting"}
             >
-              {status === "submitting" ? "Sending..." : "Send message"}
+              {status === "submitting" ? t("contactDialog.sending") : t("contactDialog.submit")}
             </Button>
           </DialogFooter>
         </form>

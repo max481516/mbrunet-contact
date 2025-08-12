@@ -1,16 +1,18 @@
+import { useTranslation } from "react-i18next";
+
 export default function PortfolioLink() {
+  const { t } = useTranslation();
   return (
     <div className="w-full max-w-sm mx-auto mb-6">
       <p className="font-semibold text-l leading-snug ">
-        If you want more information about me or my projects, please visit my
-        main website by clicking on this{" "}
+        {t("portfolioLink.paragraph")} {" "}
         <a
           href="https://mbrunet.net"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#485386] underline transition-transform duration-200 hover:scale-110 inline-block"
         >
-          link
+          {t("portfolioLink.link")}
         </a>
         .
       </p>
