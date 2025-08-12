@@ -1,6 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import type ProjectsCarousel from "./components/ProjectsCarousel";
+
 
 const STORAGE_KEY = "lng";
 const SUPPORTED = ["en", "fr", "ru"] as const;
