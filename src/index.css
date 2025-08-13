@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Bebas+Neue&family=Nata+Sans:wght@100..900&family=Play:wght@400;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+/* CUSTOM VARIANT FOR APPLYING STYLES BASED ON SELECTED LANGUAGE */
+@custom-variant ru (&:lang(ru));
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -115,9 +118,13 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  /* CUSTOM FONTS */
   body {
     @apply bg-background text-foreground font-sans;
     font-family: "Aldrich", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   p {
     @apply leading-[1.2];
@@ -125,6 +132,28 @@
   
   h1, h2, h3, h4, h5, h6 {
     font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+   
+  }
+  
+  html[lang="ru"] body {
+    font-family: "Play", sans-serif;
+    font-style: normal;
+  }
+
+  html[lang="ru"] h1,
+  html[lang="ru"] h2,
+  html[lang="ru"] h3,
+  html[lang="ru"] h4,
+  html[lang="ru"] h5,
+  html[lang="ru"] h6 {
+    font-family: "Nata Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
   }
   
   

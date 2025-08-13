@@ -164,7 +164,7 @@ const resources = {
         messageMe: "написать мне",
       },
       profileCard: {
-        name: "Максимилиен Брюне",
+        name: "Максимилиан Брюне",
         location: "Дубай, ОАЭ",
         description: "Трехъязычный разработчик (французский, русский, английский) из Дубая с одной целью — помогать бизнесу расти. Создаю современные, высокопроизводительные приложения с использованием передовых инструментов и гибких методологий для превращения идей в результат.",
       },
@@ -182,9 +182,9 @@ const resources = {
       },
       projectsCarousel: {
         title: "Мои недавние проекты",
-        item1Desc: "Сайт для видеопроизводственной компании, основанной каскадёрами кино, с демонстрацией динамичных клипов, рекламы и насыщенных экшн-брендовых кампаний.",
+        item1Desc: "Сайт для видеопродакшена, основанного кинокаскадёрами, с демонстрацией динамичных клипов, рекламы и насыщенных экшн-брендовых кампаний.",
         item2Desc: "Промо-сайт для парфюмерных туров, предлагающий путешествие по лучшим бутикам Парижа, истории парфюмерии и миру ароматов.",
-        item3Title: "Сайт свадьбы",
+        item3Title: "Свадебный сайт",
         item3Desc: "Индивидуальный свадебный сайт с интерактивным фото/видео альбомом в реальном времени, где гости могут делиться моментами и реагировать на них.",
       },
       portfolioLink: {
@@ -227,6 +227,11 @@ const resources = {
 
 const initialLng = getInitialLanguage();
 
+// Set initial <html lang> so CSS can react to language
+try {
+  document.documentElement.lang = initialLng;
+} catch {}
+
 i18n.use(initReactI18next).init({
   resources,
   lng: initialLng,
@@ -238,6 +243,8 @@ i18n.use(initReactI18next).init({
 i18n.on("languageChanged", (lng: string) => {
   try {
     localStorage.setItem(STORAGE_KEY, lng);
+    // Keep <html lang> in sync for CSS language-specific rules
+    document.documentElement.lang = lng;
   } catch {}
 });
 
