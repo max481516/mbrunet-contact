@@ -142,7 +142,7 @@ const resources = {
         form: "formulaire",
       },
       contactDialog: {
-        title: "M’envoyer un message",
+        title: "Me contacter",
         description: "Remplissez le formulaire ci-dessous et je vous répondrai rapidement.",
         name: "Nom",
         namePlaceholder: "Votre nom",

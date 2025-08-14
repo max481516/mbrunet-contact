@@ -15,7 +15,7 @@ export default function ProfileCard() {
             MB
           </AvatarFallback>
         </Avatar>
-        <h2 className="text-2xl ru:text-xl font-bold text-center">{t("profileCard.name")}</h2>
+        <h2 className="text-2xl ru:text-xl text-center">{t("profileCard.name")}</h2>
         <span className="text-muted-foreground text-sm text-center mb-2">
           {t("profileCard.location")}
         </span>

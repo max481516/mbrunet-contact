@@ -87,8 +87,8 @@ export default function ContactDialog({
       >
         {/* Programmatic focus target (not in tab order) */}
         <div ref={topFocusRef} tabIndex={-1} />
-        <DialogHeader>
-          <DialogTitle className="text-2xl">{t("contactDialog.title")}</DialogTitle>
+        <DialogHeader className="text-left">
+          <h3 className="text-2xl ru:text-xl">{t("contactDialog.title")}</h3>
           <DialogDescription>
             {t("contactDialog.description")}
           </DialogDescription>

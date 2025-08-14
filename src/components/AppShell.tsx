@@ -3,7 +3,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     // Outer gradient only visible above mobile
     <div
       className="min-h-screen w-full flex items-center justify-center
-      sm:bg-gradient-to-tr sm:from-indigo-200 sm:via-purple-100 sm:to-blue-200"
+      bg-gradient-to-br from-[#5967a6]/10 via-[#8aa1ff]/10 to-[#cfe2ff]/10 dark:from-[#5967a6]/20 via-[#4455aa]/15 to-[#0b1020]"
     >
       {/* Card: fills on mobile, "floats" on desktop */}
       <div

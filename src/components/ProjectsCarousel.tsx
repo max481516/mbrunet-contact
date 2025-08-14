@@ -31,7 +31,7 @@ export default function ProjectsCarousel() {
   ];
   return (
     <div className="w-full max-w-sm mx-auto mb-4">
-      <h3 className="text-3xl font-bold mb-4 text-center ru:text-2xl">
+      <h3 className="text-3xl mb-4 text-center ru:text-2xl">
         {t("projectsCarousel.title")}
       </h3>
       <Carousel>
