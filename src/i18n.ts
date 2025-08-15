@@ -27,7 +27,8 @@ const resources = {
         messageMe: "message me",
       },
       profileCard: {
-        name: "Maximilien Brunet",
+        name: "Maximilian Brunet",
+        title: "Freelance Web Developer",
         location: "Dubai, UAE",
         description: "Dubai-based, trilingual (French, Russian, English) developer driven by one goal: helping businesses grow. I craft sleek, high-performance apps using cutting-edge tools and agile workflows to turn ideas into results.",
       },
@@ -100,6 +101,7 @@ const resources = {
       },
       profileCard: {
         name: "Maximilien Brunet",
+        title: "Développeur Web Freelance",
         location: "Dubaï, Émirats Arabes Unis",
         description: "Développeur trilingue (français, russe, anglais) basé à Dubaï, animé par un objectif : aider les entreprises à croître. Je conçois des applications élégantes et performantes grâce aux outils les plus avancés et aux méthodes agiles pour transformer les idées en résultats.",
       },
@@ -165,6 +167,7 @@ const resources = {
       },
       profileCard: {
         name: "Максимилиан Брюне",
+        title: "Фриланс веб-разработчик",
         location: "Дубай, ОАЭ",
         description: "Трехъязычный разработчик (французский, русский, английский) из Дубая с одной целью — помогать бизнесу расти. Создаю современные, высокопроизводительные приложения с использованием передовых инструментов и гибких методологий для превращения идей в результат.",
       },

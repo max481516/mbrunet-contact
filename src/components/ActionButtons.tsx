@@ -6,16 +6,24 @@ export default function ActionButtons() {
   const { t } = useTranslation();
   // 1) Save my contact → generate and download a vCard (.vcf)
   function handleSaveContact() {
+    const fullName = t("profileCard.name");
+    const titleText = t("profileCard.title");
+    const locationText = t("profileCard.location");
+
+    // Split name by first space into first and last
+    const [firstName, lastName] = fullName.split(" ");
+  
+
     const vcard = [
       "BEGIN:VCARD",
       "VERSION:3.0",
-      "N:Brunet;Maximilien;;;",
-      "FN:Maximilien Brunet",
-      "TITLE:Freelance Web Developer",
+      // N: Lastname;Firstname;;; per vCard 3.0 spec
+      `N:${lastName};${firstName};;;`,
+      `FN:${fullName}`,
+      `TITLE:${titleText}`,
       "EMAIL;TYPE=INTERNET,WORK:maximilien.brunet@me.com",
       "TEL;TYPE=CELL,WORK:+971509475535",
-      // ADR: PO Box;Extended;Street;Locality;Region;Postal Code;Country
-      "ADR;TYPE=WORK:;;;Dubai;;;UAE",
+      `ADR;TYPE=WORK:;;;${locationText}`,
       "URL:https://mbrunet.net",
       "URL:https://mbrunet.contact",
       "URL:https://www.linkedin.com/in/maximilien-brunet-97540511b/",
@@ -26,7 +34,8 @@ export default function ActionButtons() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "Maximilien-Brunet.vcf";
+    // Use localized filename ("First-Last.vcf")
+    a.download = `${fullName.replace(/\s+/g, "-")}.vcf`;
     document.body.appendChild(a);
     a.click();
     a.remove();
